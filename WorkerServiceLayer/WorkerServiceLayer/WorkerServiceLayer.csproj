@@ -13,7 +13,9 @@
       <IncludeAssets>runtime; build; native; contentfiles; analyzers; buildtransitive</IncludeAssets>
     </PackageReference>
     <PackageReference Include="Microsoft.Extensions.Hosting" Version="5.0.0" />
-    <PackageReference Include="NewsAPI" Version="0.6.0" />
+	<PackageReference Include="NewsAPI" Version="0.6.0">
+		<NoWarn>NU1701</NoWarn>
+	</PackageReference>
   </ItemGroup>
 
   <ItemGroup>

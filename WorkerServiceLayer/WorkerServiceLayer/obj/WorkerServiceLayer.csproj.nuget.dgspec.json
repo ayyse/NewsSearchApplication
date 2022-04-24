@@ -140,7 +140,10 @@
             },
             "NewsAPI": {
               "target": "Package",
-              "version": "[0.6.0, )"
+              "version": "[0.6.0, )",
+              "noWarn": [
+                "NU1701"
+              ]
             }
           },
           "imports": [

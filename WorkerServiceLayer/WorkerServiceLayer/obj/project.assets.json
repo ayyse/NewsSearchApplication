@@ -8217,7 +8217,10 @@
           },
           "NewsAPI": {
             "target": "Package",
-            "version": "[0.6.0, )"
+            "version": "[0.6.0, )",
+            "noWarn": [
+              "NU1701"
+            ]
           }
         },
         "imports": [
@@ -8238,17 +8241,5 @@
         "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\6.0.201\\RuntimeIdentifierGraph.json"
       }
     }
-  },
-  "logs": [
-    {
-      "code": "NU1701",
-      "level": "Warning",
-      "warningLevel": 1,
-      "message": "Package 'NewsAPI 0.6.0' was restored using '.NETFramework,Version=v4.6.1, .NETFramework,Version=v4.6.2, .NETFramework,Version=v4.7, .NETFramework,Version=v4.7.1, .NETFramework,Version=v4.7.2, .NETFramework,Version=v4.8' instead of the project target framework 'net5.0'. This package may not be fully compatible with your project.",
-      "libraryId": "NewsAPI",
-      "targetGraphs": [
-        "net5.0"
-      ]
-    }
-  ]
+  }
 }

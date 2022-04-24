@@ -95,3 +95,7 @@ C:\Users\aysea\Documents\GitHub\NewsSearchApplication\WorkerServiceLayer\WorkerS
 C:\Users\aysea\Documents\GitHub\NewsSearchApplication\WorkerServiceLayer\WorkerServiceLayer\obj\Debug\net5.0\ref\WorkerServiceLayer.dll
 C:\Users\aysea\Documents\GitHub\NewsSearchApplication\WorkerServiceLayer\WorkerServiceLayer\bin\Debug\net5.0\Humanizer.dll
 C:\Users\aysea\Documents\GitHub\NewsSearchApplication\WorkerServiceLayer\WorkerServiceLayer\bin\Debug\net5.0\Microsoft.EntityFrameworkCore.Design.dll
+C:\Users\aysea\Documents\GitHub\NewsSearchApplication\WorkerServiceLayer\WorkerServiceLayer\bin\Debug\net5.0\AutoMapper.dll
+C:\Users\aysea\Documents\GitHub\NewsSearchApplication\WorkerServiceLayer\WorkerServiceLayer\bin\Debug\net5.0\AutoMapper.Extensions.Microsoft.DependencyInjection.dll
+C:\Users\aysea\Documents\GitHub\NewsSearchApplication\WorkerServiceLayer\WorkerServiceLayer\bin\Debug\net5.0\NewsAPI.dll
+C:\Users\aysea\Documents\GitHub\NewsSearchApplication\WorkerServiceLayer\WorkerServiceLayer\bin\Debug\net5.0\System.Runtime.CompilerServices.Unsafe.dll

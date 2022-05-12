@@ -1,0 +1,14 @@
+C:\Users\ayse\Documents\GitHub\NewsSearchApplication\NewsSearch.Worker\NewsSearch.Worker\bin\Release\net5.0\publish\win-x64\appsettings.Development.json
+C:\Users\ayse\Documents\GitHub\NewsSearchApplication\NewsSearch.Worker\NewsSearch.Worker\bin\Release\net5.0\publish\win-x64\appsettings.json
+C:\Users\ayse\Documents\GitHub\NewsSearchApplication\NewsSearch.Worker\NewsSearch.Worker\bin\Release\net5.0\publish\win-x64\NewsSearch.Worker.pdb
+C:\Users\ayse\Documents\GitHub\NewsSearchApplication\NewsSearch.Worker\NewsSearch.Worker\bin\Release\net5.0\publish\win-x64\NewsSearch.Core.exe
+C:\Users\ayse\Documents\GitHub\NewsSearchApplication\NewsSearch.Worker\NewsSearch.Worker\bin\Release\net5.0\publish\win-x64\NewsSearch.Core.runtimeconfig.json
+C:\Users\ayse\Documents\GitHub\NewsSearchApplication\NewsSearch.Worker\NewsSearch.Worker\bin\Release\net5.0\publish\win-x64\NewsSearch.Worker.dll.config
+C:\Users\ayse\Documents\GitHub\NewsSearchApplication\NewsSearch.Worker\NewsSearch.Worker\bin\Release\net5.0\publish\win-x64\clrcompression.dll
+C:\Users\ayse\Documents\GitHub\NewsSearchApplication\NewsSearch.Worker\NewsSearch.Worker\bin\Release\net5.0\publish\win-x64\clrjit.dll
+C:\Users\ayse\Documents\GitHub\NewsSearchApplication\NewsSearch.Worker\NewsSearch.Worker\bin\Release\net5.0\publish\win-x64\coreclr.dll
+C:\Users\ayse\Documents\GitHub\NewsSearchApplication\NewsSearch.Worker\NewsSearch.Worker\bin\Release\net5.0\publish\win-x64\mscordaccore.dll
+C:\Users\ayse\Documents\GitHub\NewsSearchApplication\NewsSearch.Worker\NewsSearch.Worker\bin\Release\net5.0\publish\win-x64\Microsoft.Data.SqlClient.SNI.dll
+C:\Users\ayse\Documents\GitHub\NewsSearchApplication\NewsSearch.Worker\NewsSearch.Worker\bin\Release\net5.0\publish\win-x64\Microsoft.Data.SqlClient.SNI.pdb
+C:\Users\ayse\Documents\GitHub\NewsSearchApplication\NewsSearch.Worker\NewsSearch.Worker\bin\Release\net5.0\publish\win-x64\NewsSearch.Core.pdb
+C:\Users\ayse\Documents\GitHub\NewsSearchApplication\NewsSearch.Worker\NewsSearch.Worker\bin\Release\net5.0\publish\win-x64\NewsSearch.Worker.exe

@@ -11,6 +11,7 @@ using Microsoft.Extensions.DependencyInjection;
 using NewsSearch.Worker.AppServices.DTOs;
 using NewsSearch.Worker.AppServices.Interfaces;
 using System.IO;
+using NewsSearch.Worker.Constants;
 
 namespace NewsSearch.Worker
 {
@@ -38,7 +39,7 @@ namespace NewsSearch.Worker
                 }
                 catch (Exception ex)
                 {
-                    FileStream fs = new FileStream("C:/Users/ayse/Documents/GitHub/NewsSearchApplication/Exceptions.txt", FileMode.Append, FileAccess.Write, FileShare.Write);
+                    FileStream fs = new FileStream(Constant.ExceptionsFileRoot, FileMode.Append, FileAccess.Write, FileShare.Write);
                     StreamWriter sw = new StreamWriter(fs);
                     sw.WriteLine(DateTimeOffset.Now + " " + ex.Message.ToString());
                     sw.Close();
@@ -48,7 +49,7 @@ namespace NewsSearch.Worker
 
         public void CreateNews()
         {
-            var newsApiClient = new NewsApiClient("fa7766431fda403baddf546cfb2e8ebb");
+            var newsApiClient = new NewsApiClient(Constant.ApiKey);
 
             var articleResponse = newsApiClient.GetEverything(new EverythingRequest
             {

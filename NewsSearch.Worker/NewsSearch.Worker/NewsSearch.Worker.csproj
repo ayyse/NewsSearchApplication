@@ -26,4 +26,8 @@
   <ItemGroup>
     <ProjectReference Include="..\..\NewsSearch.Core\NewsSearch.Core.csproj" />
   </ItemGroup>
+
+  <ItemGroup>
+    <Folder Include="ExceptionsFolder\" />
+  </ItemGroup>
 </Project>

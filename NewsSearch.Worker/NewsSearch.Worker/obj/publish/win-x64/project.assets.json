@@ -11586,7 +11586,8 @@
     ]
   },
   "packageFolders": {
-    "C:\\Users\\ayse\\.nuget\\packages\\": {}
+    "C:\\Users\\ayse\\.nuget\\packages\\": {},
+    "C:\\Program Files (x86)\\Microsoft Visual Studio\\Shared\\NuGetPackages": {}
   },
   "project": {
     "version": "1.0.0",
@@ -11597,8 +11598,12 @@
       "packagesPath": "C:\\Users\\ayse\\.nuget\\packages\\",
       "outputPath": "C:\\Users\\ayse\\Documents\\GitHub\\NewsSearchApplication\\NewsSearch.Worker\\NewsSearch.Worker\\obj\\publish\\win-x64\\",
       "projectStyle": "PackageReference",
+      "fallbackFolders": [
+        "C:\\Program Files (x86)\\Microsoft Visual Studio\\Shared\\NuGetPackages"
+      ],
       "configFilePaths": [
         "C:\\Users\\ayse\\AppData\\Roaming\\NuGet\\NuGet.Config",
+        "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.FallbackLocation.config",
         "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.Offline.config"
       ],
       "originalTargetFrameworks": [

@@ -1,17 +1,17 @@
-using System;
-using NewsAPI;
-using System.Linq;
-using NewsAPI.Models;
-using System.Threading;
-using NewsAPI.Constants;
-using System.Threading.Tasks;
+using Microsoft.Extensions.Configuration;
+using Microsoft.Extensions.DependencyInjection;
 using Microsoft.Extensions.Hosting;
 using Microsoft.Extensions.Logging;
-using Microsoft.Extensions.DependencyInjection;
+using NewsAPI;
+using NewsAPI.Constants;
+using NewsAPI.Models;
 using NewsSearch.Worker.AppServices.DTOs;
 using NewsSearch.Worker.AppServices.Interfaces;
+using System;
 using System.IO;
-using NewsSearch.Worker.Constants;
+using System.Linq;
+using System.Threading;
+using System.Threading.Tasks;
 
 namespace NewsSearch.Worker
 {
@@ -19,12 +19,18 @@ namespace NewsSearch.Worker
     {
         private readonly ILogger<Worker> _logger;
         private IServiceProvider _serviceProvider;
-        public Worker(ILogger<Worker> logger, IServiceProvider serviceProvider)
+        public IConfiguration Configuration { get; }
+        public Worker(ILogger<Worker> logger, IServiceProvider serviceProvider, IConfiguration config)
         {
             _logger = logger;
             _serviceProvider = serviceProvider;
+            Configuration = config;
+            var apiKey = Configuration["ApiKey"];
+            var exceptionsFolderRoot = Configuration["ExceptionsFolderRoot"];
         }
 
+        string month = DateTime.Today.ToString("MMM");
+        string day = DateTime.Today.ToString("dd");
 
         protected override async Task ExecuteAsync(CancellationToken stoppingToken)
         {
@@ -39,7 +45,15 @@ namespace NewsSearch.Worker
                 }
                 catch (Exception ex)
                 {
-                    FileStream fs = new FileStream(Constant.ExceptionsFileRoot, FileMode.Append, FileAccess.Write, FileShare.Write);
+                    DirectoryInfo directory = new DirectoryInfo(Configuration["ExceptionsFolderRoot"]);
+                    DirectoryInfo monthDirectory = directory.CreateSubdirectory(month);
+
+                    DirectoryInfo dayDirectory = monthDirectory.CreateSubdirectory(day);
+
+                    string path = dayDirectory.ToString();
+                    string txtPath = path + "/Exception.txt";
+                    FileStream fs = new FileStream(txtPath, FileMode.Append, FileAccess.Write, FileShare.Write);
+
                     StreamWriter sw = new StreamWriter(fs);
                     sw.WriteLine(DateTimeOffset.Now + " " + ex.Message.ToString());
                     sw.Close();
@@ -49,14 +63,14 @@ namespace NewsSearch.Worker
 
         public void CreateNews()
         {
-            var newsApiClient = new NewsApiClient(Constant.ApiKey);
+            var newsApiClient = new NewsApiClient(Configuration["ApiKey"]);
 
             var articleResponse = newsApiClient.GetEverything(new EverythingRequest
             {
                 Q = "Türkiye",
                 Language = Languages.TR,
                 SortBy = SortBys.PublishedAt,
-                From = new DateTime(2022, 4, 17)
+                From = new DateTime(2022, 5, 17)
             });
 
 

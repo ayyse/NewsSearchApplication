@@ -126,6 +126,8 @@ public static IHostBuilder CreateHostBuilder(string[] args) =>
 - I right-clicked on the NewsSearch.Worker project and opened the publish option in the window that opened. In the window that opens, I selected Folder and clicked the Next button. Then I made the necessary adjustments in the opened window.
 <p align="center">
   <img src="https://github.com/ayyse/NewsSearchApplication/blob/main/Screenshots/Resim5.png">
+</p>
+<p align="center">
   <img src="https://github.com/ayyse/NewsSearchApplication/blob/main/Screenshots/Resim6.png">
 </p>
 

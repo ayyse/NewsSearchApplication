@@ -12,21 +12,21 @@ Worker Service is background services that run as cross-platform, just like wind
 - When the ExecuteAsync method runs the project, it refreshes every 10 seconds and runs the commands inside the method.
 ```
 public class Worker : BackgroundService
+{
+    private readonly ILogger<Worker> _logger;
+
+    public Worker(ILogger<Worker> logger)
     {
-        private readonly ILogger<Worker> _logger;
-        
-        public Worker(ILogger<Worker> logger)
-        {
-            _logger = logger;
-        }
-        protected override async Task ExecuteAsync(CancellationToken stoppingToken)
-        {
-            while (!stoppingToken.IsCancellationRequested)
-            {
-                _logger.LogInformation("Worker running at: {time}", DateTimeOffset.Now);
-                await Task.Delay(10000, stoppingToken);
-            }
+        _logger = logger;
     }
+    protected override async Task ExecuteAsync(CancellationToken stoppingToken)
+    {
+        while (!stoppingToken.IsCancellationRequested)
+        {
+            _logger.LogInformation("Worker running at: {time}", DateTimeOffset.Now);
+            await Task.Delay(10000, stoppingToken);
+        }
+}
 ```
 
 - The output of the above method in the console is as follows, and the request continues every ten seconds until the project is closed.
@@ -41,7 +41,6 @@ public class Worker : BackgroundService
 - In the Code First structure, the "class" structures in the programming language correspond to the "table" structures in the database, and the "property" structures correspond to the "column" structures in the database.
 
 - In order to use the Code first structure, I right-clicked on the Core layer and loaded the following packages into the project from the Manage NuGet Packages section in the window that opened.
-
 <p align="center">
   <img src="https://github.com/ayyse/NewsSearchApplication/blob/main/Screenshots/Resim2.png">
 </p>
@@ -52,7 +51,6 @@ public class Worker : BackgroundService
 ### Creating Database with Entity Framework Code First
 
 - I created two separate classes for news and keywords. I created the context class that will connect with the database and introduced the classes that will create the tables.
-
 ```
 public class AppDbContext : DbContext
     {
@@ -86,7 +84,7 @@ services.AddDbContext<AppDbContext>(opts =>
 
 ### Using NewsApi to Pull News
 
-I ran the `Install-Package NewsAPI` command in the Package Manager Console and uploaded the api I will use to my project. Afterwards, I imported the necessary libraries and with the api key given to me, I pulled the current news in Turkey, in Turkish, and in the order of publication.
+- I ran the `Install-Package NewsAPI` command in the Package Manager Console and uploaded the api I will use to my project. Afterwards, I imported the necessary libraries and with the api key given to me, I pulled the current news in Turkey, in Turkish, and in the order of publication.
 
 ```
 using NewsAPI;
@@ -108,13 +106,12 @@ var articleResponse = newsApiClient.GetEverything(new EverythingRequest
 
 ### Creating Windows Service using Background Service
 
-I installed the following packages to be able to run the project as a windows service.
+- I installed the following packages to be able to run the project as a windows service.
 <p align="center">
   <img src="https://github.com/ayyse/NewsSearchApplication/blob/main/Screenshots/Resim4.png">
 </p>
 
-The UseWindowsService extension method is configuring the application to run as a Windows Service. I set "News Search Service" as the service name and then made the necessary adjustments.
-
+- The UseWindowsService extension method is configuring the application to run as a Windows Service. I set "News Search Service" as the service name and then made the necessary adjustments.
 ```
 public static IHostBuilder CreateHostBuilder(string[] args) =>
     Host.CreateDefaultBuilder(args)
@@ -123,5 +120,35 @@ public static IHostBuilder CreateHostBuilder(string[] args) =>
             options.ServiceName = "News Search Service";
         })        
 ```
+
+### Publish the App
+
+- I right-clicked on the NewsSearch.Worker project and opened the publish option in the window that opened. In the window that opens, I selected Folder and clicked the Next button. Then I made the necessary adjustments in the opened window.
+<p align="center">
+  <img src="https://github.com/ayyse/NewsSearchApplication/blob/main/Screenshots/Resim5.png">
+  <img src="https://github.com/ayyse/NewsSearchApplication/blob/main/Screenshots/Resim6.png">
+</p>
+
+- I ran the command prompt as administrator and entered the following command.
+<p align="center">
+  <img src="https://github.com/ayyse/NewsSearchApplication/blob/main/Screenshots/Resim7.png">
+</p>
+
+```
+sc.exe start "News Search Service"
+```
+
+<p align="center">
+  <img src="https://github.com/ayyse/NewsSearchApplication/blob/main/Screenshots/Resim8.png">
+</p>
+
+- I controlled the data coming to the database and made the necessary updates in the codes. In the last case my project runs successfully and the data is correctly saved in the database.
+<p align="center">
+  <img src="https://github.com/ayyse/NewsSearchApplication/blob/main/Screenshots/Resim9.png">
+</p>
+
+
+
+
 
 

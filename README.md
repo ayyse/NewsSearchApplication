@@ -18,3 +18,18 @@ Worker Service is background services that run as cross-platform, just like wind
 <p align="center">
   <img src="https://github.com/ayyse/NewsSearchApplication/blob/main/Screenshots/Resim2.png">
 </p>
+
+### Entity Framework Code First
+
+- It is a technique that establishes a link between a database and a programming language. It is an approach that allows you to perform your database operations in your project by writing code on the Visual Studio side as much as possible. Thanks to this approach, the relationship between the database interface and the software developer is minimized.
+
+- In the Code First structure, the "class" structures in the programming language correspond to the "table" structures in the database, and the "property" structures correspond to the "column" structures in the database.
+
+- In order to use the Code first structure, I right-clicked on the Core layer and loaded the following packages into the project from the Manage NuGet Packages section in the window that opened.
+
+<p align="center">
+  <img src="https://github.com/ayyse/NewsSearchApplication/blob/main/Screenshots/Resim3.png">
+</p>
+<p align="center">
+  <img src="https://github.com/ayyse/NewsSearchApplication/blob/main/Screenshots/Resim4.png">
+</p>

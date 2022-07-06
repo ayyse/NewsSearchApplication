@@ -8,3 +8,13 @@ Windows services are software that do not have a user interface and run in the b
 
 ### What is .Net Core Worker Service?
 Worker Service is background services that run as cross-platform, just like windows services. Worker Service does not directly implement IHostedService. Inherits from BackgroundService. BackgroundService offers ExecuteAsync(), an abstract method that can run as a scheduler throughout the application, and the Dispose() method that allows us to clean up the Garbage Collector memory side.
+
+- When the ExecuteAsync method runs the project, it refreshes every 10 seconds and runs the commands inside the method.
+<p align="center">
+  <img src="https://github.com/ayyse/NewsSearchApplication/blob/main/Screenshots/Resim1.png">
+</p>
+
+- The output of the above method in the console is as follows, and the request continues every ten seconds until the project is closed.
+<p align="center">
+  <img src="https://github.com/ayyse/NewsSearchApplication/blob/main/Screenshots/Resim2.png">
+</p>
